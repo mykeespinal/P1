@@ -1,21 +1,114 @@
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo HTML CSS JS</title>
-    <!-- Vinculamos la hoja de estilos CSS -->
-    <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal del Equipo — Desarrollo Web Integral</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-
-    <div class="contenedor">
-        <h1>¡Hola desde HTML!</h1>
-        <p id="texto">Este texto cambiará al presionar el botón.</p>
-        <button id="miBoton">¡Hazme clic!</button>
-    </div>
-
-    <!-- Vinculamos el archivo JavaScript -->
-    <script src="app.js"></script>
+ 
+  <header>
+    <h1>Portal del Equipo</h1>
+    <nav>
+      <a href="#equipo">Equipo</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#contacto">Contáctanos</a>
+    </nav>
+  </header>
+ 
+  <main>
+ 
+    <!-- ===================== SECCIÓN EQUIPO (v1.0.0) ===================== -->
+    <section id="equipo" aria-labelledby="titulo-equipo">
+      <h2 id="titulo-equipo">Nuestro Equipo</h2>
+      <div class="team-cards">
+        <article class="team-card">
+          <h3>Integrante 1</h3>
+          <p>Rol: Líder</p>
+        </article>
+        <article class="team-card">
+          <h3>Integrante 2</h3>
+          <p>Rol: HTML</p>
+        </article>
+        <article class="team-card">
+          <h3>Integrante 3</h3>
+          <p>Rol: CSS</p>
+        </article>
+        <article class="team-card">
+          <h3>Integrante 4</h3>
+          <p>Rol: JS</p>
+        </article>
+      </div>
+    </section>
+ 
+    <!-- ===================== SECCIÓN PORTAFOLIO (rol HTML) ===================== -->
+    <section id="portafolio" aria-labelledby="titulo-portafolio">
+      <h2 id="titulo-portafolio">Nuestro Portafolio</h2>
+      <p>Estos son algunos de los proyectos desarrollados por nuestro equipo a lo largo del curso.</p>
+ 
+      <article class="proyecto-card">
+        <figure>
+          <img src="img/proyecto1.png" alt="Captura de pantalla del proyecto 1: portal web del equipo">
+          <figcaption>Portal del equipo</figcaption>
+        </figure>
+        <h3>Proyecto 1</h3>
+        <p>Sitio web colaborativo construido en equipo, integrando HTML semántico, CSS responsivo y JavaScript.</p>
+        <a href="#" class="btn-ver">Ver proyecto</a>
+      </article>
+ 
+      <article class="proyecto-card">
+        <figure>
+          <img src="img/proyecto2.png" alt="Captura de pantalla del proyecto 2: aplicación de tareas">
+          <figcaption>Gestor de tareas</figcaption>
+        </figure>
+        <h3>Proyecto 2</h3>
+        <p>Aplicación de lista de tareas con almacenamiento local y manipulación del DOM.</p>
+        <a href="#" class="btn-ver">Ver proyecto</a>
+      </article>
+ 
+      <article class="proyecto-card">
+        <figure>
+          <img src="img/proyecto3.png" alt="Captura de pantalla del proyecto 3: galería de imágenes">
+          <figcaption>Galería interactiva</figcaption>
+        </figure>
+        <h3>Proyecto 3</h3>
+        <p>Galería de imágenes responsiva con filtros dinámicos usando JavaScript.</p>
+        <a href="#" class="btn-ver">Ver proyecto</a>
+      </article>
+    </section>
+ 
+    <!-- ===================== SECCIÓN CONTACTO (rol JS / formulario) ===================== -->
+    <section id="contacto" aria-labelledby="titulo-contacto">
+      <h2 id="titulo-contacto">Contáctanos</h2>
+      <form id="form-contacto" novalidate>
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+ 
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+ 
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+ 
+        <button type="submit">Enviar</button>
+        <button type="button" id="btn-ver-mensajes">Ver mensajes enviados</button>
+ 
+        <p id="msg-respuesta" aria-live="polite"></p>
+      </form>
+ 
+      <div id="lista-mensajes" aria-live="polite"></div>
+    </section>
+ 
+  </main>
+ 
+  <footer>
+    <p>&copy; 2026 - Portal del Equipo. Todos los derechos reservados.</p>
+  </footer>
+ 
+  <script src="script.js"></script>
 </body>
 </html>
+ 
