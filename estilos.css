@@ -1,32 +1,302 @@
+:root {
+  --color-primario: #1f3864;
+  --color-acento: #2e75b6;
+  --color-fondo: #f2f4f8;
+  --color-texto: #333333;
+  --color-error: #c0392b;
+  --color-exito: #1e8449;
+  --fuente-base: 'Segoe UI', sans-serif;
+  --radio-borde: 8px;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+ 
+/* ===================== BASE ===================== */
+* {
+  box-sizing: border-box;
+}
+ 
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f2f5;
+  margin: 0;
+  font-family: var(--fuente-base);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
 }
-
-.contenedor {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+ 
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
-
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+ 
+h2 {
+  color: var(--color-primario);
+  border-bottom: 2px solid var(--color-acento);
+  padding-bottom: 0.4rem;
 }
-
-button:hover {
-    background-color: #0056b3;
+ 
+/* ===================== HEADER Y NAV ===================== */
+header {
+  background-color: var(--color-primario);
+  color: #fff;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
+ 
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+ 
+nav {
+  display: flex;
+  gap: 1.2rem;
+}
+ 
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+ 
+nav a:hover {
+  color: var(--color-acento);
+}
+ 
+/* ===================== EQUIPO ===================== */
+#equipo {
+  margin-top: 2rem;
+}
+ 
+.team-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+ 
+.team-card {
+  background: #fff;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra);
+  padding: 1.2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+ 
+/* ===================== PORTAFOLIO ===================== */
+#portafolio {
+  margin-top: 3rem;
+}
+ 
+.proyecto-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background: #fff;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra);
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+.proyecto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+ 
+.proyecto-card figure {
+  margin: 0;
+  flex: 0 0 200px;
+}
+ 
+.proyecto-card img {
+  width: 100%;
+  border-radius: var(--radio-borde);
+  display: block;
+}
+ 
+.proyecto-card figcaption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.4rem;
+}
+ 
+.proyecto-card h3 {
+  margin: 0 0 0.4rem 0;
+  color: var(--color-primario);
+}
+ 
+.btn-ver {
+  display: inline-block;
+  background-color: var(--color-acento);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radio-borde);
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+ 
+.btn-ver:hover {
+  background-color: var(--color-primario);
+  transform: scale(1.05);
+}
+ 
+/* ===================== CONTACTO / FORMULARIO ===================== */
+#contacto {
+  margin: 3rem 0;
+}
+ 
+#form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 500px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra);
+}
+ 
+#form-contacto label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+ 
+#form-contacto input,
+#form-contacto textarea {
+  border: 2px solid #ccc;
+  border-radius: var(--radio-borde);
+  padding: 0.6rem;
+  font-family: var(--fuente-base);
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+ 
+#form-contacto input:focus,
+#form-contacto textarea:focus {
+  border-color: var(--color-acento);
+  outline: none;
+}
+ 
+#form-contacto button[type="submit"] {
+  background-color: var(--color-primario);
+  color: #fff;
+  border: none;
+  padding: 0.7rem;
+  border-radius: var(--radio-borde);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.25s ease;
+}
+ 
+#form-contacto button[type="submit"]:hover {
+  background-color: var(--color-acento);
+}
+ 
+#btn-ver-mensajes {
+  background-color: transparent;
+  color: var(--color-primario);
+  border: 2px solid var(--color-primario);
+  padding: 0.6rem;
+  border-radius: var(--radio-borde);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+ 
+#btn-ver-mensajes:hover {
+  background-color: var(--color-primario);
+  color: #fff;
+}
+ 
+.msg-error {
+  color: var(--color-error);
+  font-weight: 600;
+}
+ 
+.msg-exito {
+  color: var(--color-exito);
+  font-weight: 600;
+}
+ 
+#lista-mensajes {
+  margin-top: 1rem;
+  max-width: 500px;
+}
+ 
+#lista-mensajes table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: var(--radio-borde);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+ 
+#lista-mensajes th,
+#lista-mensajes td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+  font-size: 0.85rem;
+}
+ 
+/* ===================== FOOTER ===================== */
+footer {
+  background-color: var(--color-primario);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+ 
+/* ===================== MEDIA QUERIES (rol CSS - Bloque B) ===================== */
+ 
+/* Tablet — máx. 768px */
+@media (max-width: 768px) {
+  .team-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+ 
+  .proyecto-card {
+    flex-direction: column;
+  }
+ 
+  .proyecto-card figure {
+    flex: none;
+    width: 100%;
+  }
+}
+ 
+/* Móvil — máx. 480px */
+@media (max-width: 480px) {
+  .team-cards {
+    grid-template-columns: 1fr;
+  }
+ 
+  header h1 {
+    font-size: 1.5rem;
+  }
+ 
+  nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+ 
+  #form-contacto {
+    max-width: 100%;
+  }
+}
+ 
